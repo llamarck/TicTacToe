@@ -2,9 +2,9 @@ var flag = 0;
 var board = [];
 var PlayerOne, PlayerTwo;
 
-function setNames(PlayerOne, PlayerTwo){
-  PlayerOne = document.getElementById("PlayerOne").innerText;
-  PlayerTwo = document.getElementById("PlayerTwo").innerText;
+function setNames(){
+  PlayerOne = document.getElementById("PlayerOne").value;
+  PlayerTwo = document.getElementById("PlayerTwo").value;
 }
 
 function checkBoard(){
@@ -16,7 +16,7 @@ function checkBoard(){
      board[2] == 0 && board[5] == 0 && board[8] == 0 ||//última vertical
      board[0] == 0 && board[4] == 0 && board[8] == 0 ||
      board[2] == 0 && board[4] == 0 && board[6] == 0){
-    alert("0 ganhou!");
+    alert(PlayerOne + " (O) ganhou!");
     fillBoard();
   }else if(board[0] == 1 && board[1] == 1 && board[2] == 1 ||
      board[3] == 1 && board[4] == 1 && board[5] == 1 ||
@@ -26,7 +26,7 @@ function checkBoard(){
      board[2] == 1 && board[5] == 1 && board[8] == 1 ||//última vertical
      board[0] == 1 && board[4] == 1 && board[8] == 1 ||
      board[2] == 1 && board[4] == 1 && board[6] == 1){
-    alert("X ganhou!");
+    alert(PlayerTwo + " (X) ganhou!");
     fillBoard();
   }
 }
@@ -38,10 +38,9 @@ function play(index, fig){
 
 function fillBoard(){
   var id;
-  for(var i = 1; i < 10; i++){
+  for(var i = 0; i < 9; i++){
     id = 'block' + i;
     document.getElementById(id).innerHTML = "<img src='images/empty.jpg'>";
-    console.log(id);
   }
 }
 
