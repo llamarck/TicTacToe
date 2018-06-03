@@ -1,11 +1,10 @@
 var flag = 0;
 var board = [];
-var PlayerOne, PlayerTwo;
+var PlayerOne;
 
-function setNames(){
+function setName(){
   PlayerOne = document.getElementById("PlayerOne").value;
-  PlayerTwo = document.getElementById("PlayerTwo").value;
-  alert("O jogo vai começar!\n" + "(O)" + PlayerOne + ' x ' + PlayerTwo + '(X)');
+  alert("O jogo vai começar!\n" + "(O)" + PlayerOne + ' x ' + ' CPU(X)');
 }
 
 function reply_click(clicked_id){
